@@ -19,8 +19,8 @@ func init() {
 	c.poolCompressor.New = func() interface{} {
 		return &writer{Writer: gzip.NewWriter(ioutil.Discard), pool: &c.poolCompressor}
 	}
-	SetLevel(6);
 	encoding.RegisterCompressor(c)
+	SetLevel(6);
 }
 
 type writer struct {
